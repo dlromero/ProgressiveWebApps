@@ -1,0 +1,23 @@
+<md-toolbar color="primary">
+  <div class="row">
+    <div class="col-xs-1" (click)="sidenav.toggle()">
+      <md-icon>reorder</md-icon>
+    </div>
+    <div class="col-xs-10">
+      <span>¡Yo hice esto!</span>
+    </div>
+  </div>
+</md-toolbar>
+
+<md-sidenav-container>
+  <md-sidenav mode="push" #sidenav>
+    <div (click)="sidenav.close()">
+      <a routerLink="/home">Home</a>
+      <a routerLink="/about">About</a>
+      <a>Cerrar menú</a>
+    </div>
+  </md-sidenav>
+  <md-card>
+    <router-outlet></router-outlet>
+  </md-card>
+</md-sidenav-container>
