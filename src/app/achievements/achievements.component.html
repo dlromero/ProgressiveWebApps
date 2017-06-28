@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" *ngFor="let characterMarvel of charactersMarvel">            
+            <md-card *ngIf="characterMarvel.thumbnail.path !='http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available'">
+                <md-card-header>
+                    <md-card-title>{{characterMarvel.name}}</md-card-title>
+                </md-card-header>
+                <img md-card-image src="{{characterMarvel.thumbnail.path + '.'+ characterMarvel.thumbnail.extension}}" class="img img-responsive" width="304" height="236">
+                <md-card-content>
+                    <p>
+                        {{characterMarvel.description}}
+                    </p>
+                </md-card-content>
+                <md-card-actions>
+                    <a target="_blank" href="{{characterMarvel.urls[0].url}}">
+                        <button md-button>{{characterMarvel.urls[0].type}}</button>
+                    </a>
+                    <a target="_blank" href="{{characterMarvel.urls[1].url}}">
+                        <button md-button>{{characterMarvel.urls[1].type}}</button>
+                    </a>
+                </md-card-actions>
+            </md-card>
+
+        </div>
+    </div>
+</div>

@@ -8,19 +8,25 @@ import { MaterialModule } from '@angular/material';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AboutComponent } from './about/about.component';
+import { AchievementsComponent } from './achievements/achievements.component';
+import { AchievementsService } from './services/achievements.service';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
-    AppComponent,    
-    HomeComponent, AboutComponent
+    AppComponent,
+    HomeComponent,
+    AboutComponent,
+    AchievementsComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [AchievementsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
